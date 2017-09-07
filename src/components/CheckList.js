@@ -10,8 +10,7 @@ class CheckList extends Component {
     return (
       <ul>
         {this.props.list.map(user => {
-          console.log(user);
-          return <li key={user.id}>{user.fullname}</li>
+          return <li key={user.id}>{user.fullname}<input type="checkbox" /></li>
         })}
       </ul>
     );
