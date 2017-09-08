@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 
 import * as actions from '../actions/actions'
 
-import CheckList from './CheckList';
 
 class UserList extends Component {
   componentWillMount() {
@@ -12,10 +11,13 @@ class UserList extends Component {
 
   renderUsersList() {
     const users = this.props.users
-    console.log(users);
     if (users.length>0) {
       return (
-        <CheckList list={users} />
+        <ul>
+        {users.map(user => {
+          return <li key={user.id}>{user.fullname} <input type="checkbox" checked/></li>
+        })}
+      </ul>
       )
     }
   }
