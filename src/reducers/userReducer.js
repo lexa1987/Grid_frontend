@@ -1,9 +1,17 @@
-import { GET_USERS } from '../actions/types';
+import { GET_USERS, CHANGE_CHECKED_USER } from '../actions/types';
 
 export default function authReducer(state = [], action) {
   switch (action.type) {
     case GET_USERS:
-      return [...state, ...action.payload]
+      const arr = action.payload.map(user => {
+        return {...user, ...{checked: true}};
+      });
+      return [...state, ...arr];
+    case CHANGE_CHECKED_USER:
+      return state.map(user => {
+        if (user.id === action.payload) {user.checked = !user.checked};
+        return user;
+      });
     default:
       return state
   }

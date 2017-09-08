@@ -9,13 +9,24 @@ class UserList extends Component {
     this.props.getUsersList()
   }
 
+  handlerOnChangeCheckbox(userId) {
+    this.props.changeCheckedUser(userId);
+    this.props.updateGridData(this.props.state);
+  }
+
   renderUsersList() {
-    const users = this.props.users
+    const users = this.props.state.users
     if (users.length>0) {
       return (
-        <ul>
+        <ul className="list-none">
         {users.map(user => {
-          return <li key={user.id}>{user.fullname} <input type="checkbox" checked/></li>
+          return (
+            <li key={user.id}>
+              <input 
+                type="checkbox" 
+                checked={user.checked} 
+                onChange={() => this.handlerOnChangeCheckbox(user.id)}/>  {user.fullname}                
+            </li>);
         })}
       </ul>
       )
@@ -24,10 +35,9 @@ class UserList extends Component {
 
   render() {
     return (
-      <div>
+      <div className="mr-auto">
         <h2>Пользователи</h2>
         {this.renderUsersList()}
-        <hr />
       </div>
     );
   }
@@ -35,7 +45,7 @@ class UserList extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    users: state.users
+    state
   }
 }
 
