@@ -54,7 +54,6 @@ export function getGridData() {
 
 export function updateGridData(state) {
   return function(dispatch) {
-    console.log(state);
     const request = axios.get(`${ROOT_URL}/grid/update`, {
       params: {
         scope: {
@@ -72,7 +71,6 @@ export function updateGridData(state) {
     });
     request
       .then(response => {
-        console.log(response.data);
         dispatch({type: GET_GRID, payload: response.data});
       })
   }
