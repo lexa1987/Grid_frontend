@@ -1,4 +1,8 @@
 export const GET_USERS = 'get_users'
 export const GET_GRID = 'get_grid'
+export const GET_DEGREE = 'get_degree'
+export const GET_CITY = 'get_city'
 export const UPDATE_GRID = 'update_grid'
 export const CHANGE_CHECKED_USER = 'change_checked_user'
+export const CHANGE_CHECKED_DEGREE = 'change_checked_degree'
+export const CHANGE_CHECKED_CITY = 'change_checked_city'

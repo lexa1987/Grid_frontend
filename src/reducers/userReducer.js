@@ -1,6 +1,6 @@
 import { GET_USERS, CHANGE_CHECKED_USER } from '../actions/types';
 
-export default function authReducer(state = [], action) {
+export default function userReducer(state = [], action) {
   switch (action.type) {
     case GET_USERS:
       const arr = action.payload.map(user => {
