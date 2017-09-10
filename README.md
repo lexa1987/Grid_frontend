@@ -1,5 +1,8 @@
 Проект собран с помощью утилиты Create-react-app.
 
+Установка приложения
+npm install
+
 Для запуска приложения на webpack:
 npm start
 
