@@ -32,4 +32,4 @@ Reducers - директория  содержит  редюсеры выполн
 UserList - список пользователей
 EducationList - список видов образования
 CityList - список городов
-GridContainer - таблица, грид
+GridContainer - таблица
